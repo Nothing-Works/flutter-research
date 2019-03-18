@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CounterAdd extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const CounterAdd(this.onPressed);
+  CounterAdd(this.onPressed);
 
   @override
   Widget build(BuildContext context) {

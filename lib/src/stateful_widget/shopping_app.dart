@@ -12,14 +12,14 @@ class ShoppingApp extends StatefulWidget {
 }
 
 class _ShoppingAppState extends State<ShoppingApp> {
-  Set<Product> _productList = Set<Product>();
+  Set<Product> _list = Set<Product>();
 
   void _onCartChanged(Product product, bool inCart) {
     setState(() {
       if (inCart) {
-        _productList.remove(product);
+        _list.remove(product);
       } else {
-        _productList.add(product);
+        _list.add(product);
       }
     });
   }
@@ -27,15 +27,17 @@ class _ShoppingAppState extends State<ShoppingApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Shopping list')),
-        body: ListView(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
-            children: widget.products.map((product) {
-              return ShoppingListItem(
-                product: product,
-                inCart: _productList.contains(product),
-                onCartChanged: _onCartChanged,
-              );
-            }).toList()));
+      appBar: AppBar(title: Text('List')),
+      body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 8.0),
+        children: widget.products.map((product) {
+          return ShoppingListItem(
+            onCartChanged: _onCartChanged,
+            product: product,
+            inCart: _list.contains(product),
+          );
+        }).toList(),
+      ),
+    );
   }
 }

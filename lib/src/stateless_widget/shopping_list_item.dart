@@ -22,7 +22,7 @@ class ShoppingListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () => onCartChanged(product, !inCart),
+      onTap: () => onCartChanged(product, inCart),
       leading: CircleAvatar(
           backgroundColor: _getColor(context), child: Text(product.name[0])),
       title: Text(product.name, style: _getTextStyle(context)),

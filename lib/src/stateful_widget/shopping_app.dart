@@ -17,9 +17,9 @@ class _ShoppingAppState extends State<ShoppingApp> {
   void _onCartChanged(Product product, bool inCart) {
     setState(() {
       if (inCart) {
-        _productList.add(product);
-      } else {
         _productList.remove(product);
+      } else {
+        _productList.add(product);
       }
     });
   }

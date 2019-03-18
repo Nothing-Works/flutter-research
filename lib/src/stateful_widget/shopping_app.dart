@@ -4,9 +4,7 @@ import 'package:flutter_research/src/stateless_widget/shopping_list_item.dart';
 
 class ShoppingApp extends StatefulWidget {
   final List<Product> products;
-
   ShoppingApp(this.products);
-
   @override
   _ShoppingAppState createState() => _ShoppingAppState();
 }

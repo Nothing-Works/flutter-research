@@ -7,9 +7,6 @@ class CounterAdd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      onPressed: onPressed,
-      child: Text('Add'),
-    );
+    return RaisedButton(onPressed: onPressed, child: Text('Add'));
   }
 }

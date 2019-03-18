@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_research/src/stateless_widget/counter_add.dart';
+import 'package:flutter_research/src/stateless_widget/counter_text.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -6,7 +8,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int counter = 0;
+  int _counter = 0;
+
+  void _onPressed() {
+    setState(() {
+      _counter++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,21 +25,9 @@ class _HomeState extends State<Home> {
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Text('$counter'),
-            RaisedButton(
-              onPressed: _onPressed,
-              child: Text('Add'),
-            )
-          ],
+          children: <Widget>[CounterText(_counter), CounterAdd(_onPressed)],
         ),
       ),
     );
-  }
-
-  void _onPressed() {
-    setState(() {
-      counter++;
-    });
   }
 }

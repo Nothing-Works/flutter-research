@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_research/src/stateless_widget/counter_add.dart';
 import 'package:flutter_research/src/stateless_widget/counter_text.dart';
 
-class Home extends StatefulWidget {
+class CounterApp extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _CounterAppState createState() => _CounterAppState();
 }
 
-class _HomeState extends State<Home> {
+class _CounterAppState extends State<CounterApp> {
   int _counter = 0;
 
   void _onPressed() {

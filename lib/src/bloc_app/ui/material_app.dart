@@ -8,9 +8,8 @@ class MaterialAppBloc extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: BlocAppBar(),
-      body: BodyBloc(),
-      floatingActionButton: BlocButtons(),
-    ));
+            appBar: BlocAppBar(),
+            body: BodyBloc(),
+            floatingActionButton: BlocButtons()));
   }
 }

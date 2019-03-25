@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_research/src/bloc_app/ui/material_app.dart';
 
 import './bloc/bloc.dart';
 
@@ -19,36 +20,6 @@ class _BlocAppState extends State<BlocApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Bloc'),
-        ),
-        body: Center(
-            child: BlocBuilder(
-                bloc: _bloc,
-                builder: (BuildContext context, CounterBlocState state) {
-                  return Text('${(state as InitialCounterBlocState).counter}');
-                })),
-        floatingActionButton: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            FloatingActionButton(
-              onPressed: () {
-                _bloc.dispatch(Increment());
-              },
-              child: Icon(Icons.add),
-            ),
-            FloatingActionButton(
-              onPressed: () {
-                _bloc.dispatch(Decrement());
-              },
-              child: Icon(Icons.remove),
-            )
-          ],
-        ),
-      ),
-    );
+    return BlocProvider(bloc: _bloc, child: MaterialAppBloc());
   }
 }
